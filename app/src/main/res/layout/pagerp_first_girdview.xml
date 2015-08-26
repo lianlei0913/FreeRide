@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gridview_img"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/a"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:id="@+id/fast_buy"
+        android:layout_width="140dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gridview_img"
+        android:layout_alignLeft="@id/gridview_img">
+
+        <ImageButton
+            android:layout_width="17.5dp"
+            android:layout_height="16.5dp"
+            android:background="@drawable/jian"/>
+        <EditText
+            android:layout_width="35.5dp"
+            android:layout_height="16.5dp"
+            android:text="1"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/zhong"/>
+        <ImageButton
+            android:layout_width="17.5dp"
+            android:layout_height="16.5dp"
+            android:background="@drawable/jia"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16.5dp"
+            android:textSize="16sp"
+            android:textColor="#ff9708"
+            android:layout_gravity="center"
+            android:text="立即购买"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

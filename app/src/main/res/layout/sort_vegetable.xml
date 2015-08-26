@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:background="#ffff"
+    android:orientation="horizontal">
+
+    <RadioGroup
+        android:layout_width="65dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/nav_02">
+
+        <RadioButton
+            android:id="@+id/vegetableBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="叶菜类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/vegetableBtn2"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="根茎类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/vegetableBtn3"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="芽苗类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/vegetableBtn4"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="花菜类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/vegetableBtn5"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="果菜类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/vegetableBtn6"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="菌类"
+            android:textSize="16sp" />
+
+
+    </RadioGroup>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/sort_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

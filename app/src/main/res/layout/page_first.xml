@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/banner_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe6fafd"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/top" />
+
+        <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/location_pic" />
+
+
+        <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/location_pic" />
+
+        <TextView
+            android:id="@+id/top_tv"
+            android:layout_width="222dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+
+
+    </FrameLayout>
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="158dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginTop="3dip">
+
+        <View
+            android:id="@+id/v_dot0"
+            style="@style/dot_style"
+            android:background="@drawable/dot_focused" />
+
+        <View
+            android:id="@+id/v_dot1"
+            style="@style/dot_style" />
+
+        <View
+            android:id="@+id/v_dot2"
+            style="@style/dot_style" />
+
+        <View
+            android:id="@+id/v_dot3"
+            style="@style/dot_style" />
+
+        <View
+            android:id="@+id/v_dot4"
+            style="@style/dot_style" />
+
+
+    </LinearLayout>
+</FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/xian"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="#ffff"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="3.5dp"
+            android:layout_height="22dp"
+            android:background="@drawable/shu"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="今日特价"/>
+
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/my_gridView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:cacheColorHint="#00000000"
+        android:background="#ffff"
+        android:columnWidth="5dip"
+        android:numColumns="2" />
+
+
+
+
+
+
+</LinearLayout>

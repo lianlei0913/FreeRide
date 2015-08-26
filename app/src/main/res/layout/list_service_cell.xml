@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_cell"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="30dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/order_ding_dan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/service_good_pic"
+            android:layout_width="58.5dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ding_dan" />
+
+        <TextView
+            android:id="@+id/service_order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/service_good_pic"
+            android:text="订单编号："
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/service_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/service_order_number"
+            android:text="123454321"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_alignLeft="@+id/service_order_number"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/textView4"
+            android:text="实付款：" />
+
+        <TextView
+            android:id="@+id/pay_service_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_toRightOf="@id/textView5"
+            android:text="79"
+            android:textColor="#ff00" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_toRightOf="@id/pay_service_money"
+            android:text="元" />
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="元" />
+
+        <TextView
+            android:id="@+id/order_service_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_toLeftOf="@id/textView6"
+            android:text="79"
+            android:textColor="#ff00" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/service_good_pic"
+            android:layout_toLeftOf="@id/order_service_money"
+            android:text="退款金额：" />
+
+
+        <ImageButton
+            android:id="@+id/money_to"
+            android:layout_width="62.5dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/service_good_pic"
+            android:layout_below="@id/service_good_pic"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/order_money_to" />
+
+        <ImageButton
+            android:id="@+id/rebuy"
+            android:layout_width="62.5dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/money_to"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/money_to"
+            android:layout_weight="1"
+            android:background="@drawable/rebuy" />
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/order_service"-->
+        <!--android:layout_width="62.5dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/shouhou" />-->
+
+        <TextView
+            android:id="@+id/order_service_state"
+            android:layout_width="62.5dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/money_to"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="正在处理"
+            android:textColor="#fffd5800" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/xian" />
+
+
+</LinearLayout>

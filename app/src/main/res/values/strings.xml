@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FreeRide</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    //分类信息选中和失焦的颜色变化
+
+    <color name="blue">#ff32d2fe</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffff</color>
+
+    <string name="degrees_prompt">申请服务</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="about_us">\t\t\t\t通俗的讲，Activity就是一个应用程序的门面，也就是WEB程序中一个页面,不同的是，web中的一个页面可能只是一个纯粹的展示页面不与用户进行任何交互，而几乎所有的Activity都会与用户交互。当然两者在架构上也有本质区别，Activity与用户的交互通过触发UI的不同事件完成的。</string>
+    <string name="notice">注：退款所产生的第三方手续费由各户自行承担；\n\t\t\t下单日22点之前均可退款退货</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="degrees1">
+        <item>退货退款</item>
+        <item>仅退款</item>
+        <item>仅退货(针对货到付款用户)</item>
+    </string-array>
+
+    <string-array name="degrees2">
+        <item>与订单不符</item>
+        <item>质量问题</item>
+        <item>送货延时</item>
+        <item>其他</item>
+    </string-array>
+</resources>

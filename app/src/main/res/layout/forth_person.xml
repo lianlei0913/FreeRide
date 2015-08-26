@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:background="@drawable/top"
+
+        >
+
+        <ImageButton
+            android:id="@+id/person_back"
+            android:layout_width="14dp"
+            android:layout_height="25.5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="个人信息"
+            android:textColor="#fff"
+            android:textSize="19sp" />
+
+        <ImageButton
+            android:id="@+id/baocun"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/baocun" />
+
+        <ImageButton
+            android:id="@+id/xiugai"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/xiugai"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_kong" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="用户昵称  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/bg_edittext"
+             />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_sing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="店铺名称  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_edittext"
+        android:paddingLeft="5dp"
+             />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_sing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="真实姓名  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_edittext"
+            android:paddingLeft="5dp"
+             />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_sing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="身份证号  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_edittext"
+            android:paddingLeft="5dp"
+             />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_sing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="联系电话  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_edittext"
+            android:paddingLeft="5dp"
+            android:inputType="number" />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/xing_kong" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="电子邮箱  "
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_edittext"
+            android:paddingLeft="5dp"
+            android:inputType="textEmailAddress" />
+
+        <ImageView
+            android:layout_width="20.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/dui" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="注：标注实心星型项目为必填项目"
+        android:textColor="#fffdb136" />
+
+
+</LinearLayout>

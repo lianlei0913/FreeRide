@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Non focused states -->
+    <item android:drawable="@drawable/a"
+        android:state_focused="false"
+        android:state_pressed="false"
+        android:state_selected="false" />
+
+    <item android:drawable="@drawable/c"
+        android:state_focused="false"
+        android:state_pressed="false"
+        android:state_selected="true" />
+    <!-- Pressed -->
+    <item android:drawable="@drawable/duan_xian"
+        android:state_pressed="true" />
+</selector>

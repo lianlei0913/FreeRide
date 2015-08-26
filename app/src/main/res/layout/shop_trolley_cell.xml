@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="8dp"
+    android:padding="10dp"
+    android:layout_marginLeft="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/good_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/tomato_2" />
+
+        <TextView
+            android:id="@+id/good_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/good_photo"
+            android:text="紫甘蓝"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/good_name"
+            android:layout_below="@id/good_name"
+            android:layout_marginTop="7dp"
+            android:text="单价: " />
+
+        <TextView
+            android:id="@+id/sell_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/textView"
+            android:layout_toRightOf="@id/textView"
+            android:text="2.5"
+            android:textColor="#ffff0000" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/sell_price"
+            android:layout_toRightOf="@id/sell_price"
+            android:text="元/斤" />
+
+        <LinearLayout
+            android:id="@+id/show_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/good_photo"
+            android:layout_alignLeft="@id/good_name"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x " />
+
+            <TextView
+                android:id="@+id/good_shuliang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20" />
+
+            <TextView
+                android:id="@+id/jin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 斤" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/good_photo"
+            android:layout_alignLeft="@id/good_name"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageButton
+                android:id="@+id/sub_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/jian"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/sell_num"
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/zhong"
+                android:gravity="center"
+                android:text="20"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/add_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/jia"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/good_photo"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计: " />
+
+            <TextView
+                android:id="@+id/all_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50"
+                android:textColor="#ff00" />
+
+            <TextView
+                android:id="@+id/yuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 元" />
+        </LinearLayout>
+
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/good_name" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xian"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

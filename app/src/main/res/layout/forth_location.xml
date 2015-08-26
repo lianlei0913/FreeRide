@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="101.5dp"
+        android:background="@drawable/location_bg">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <ImageButton
+                android:id="@+id/location_back"
+                android:layout_width="14dp"
+                android:layout_height="25.5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="我的位置"
+                android:textColor="#fff"
+                android:textSize="19sp" />
+
+            <Button
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/wanc" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/search_location"
+            android:layout_width="238dp"
+            android:layout_height="29.5dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/location"
+            android:paddingLeft="37dp"
+            android:paddingRight="10dp"
+            android:singleLine="true" />
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="17dp"
+        android:layout_height="21.5dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:background="@drawable/wei"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_below="@+id/frameLayout"
+        android:layout_toLeftOf="@+id/textView9"
+        android:layout_toStartOf="@+id/textView9"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="点击定位当前位置"
+        android:textSize="19sp"
+        android:layout_alignBottom="@+id/imageView10"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xian"
+        android:layout_marginTop="9dp"
+        android:layout_below="@+id/imageView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp">
+
+    </ListView>
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="17dp"
+        android:layout_height="21.5dp"
+        android:background="@drawable/man"
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView10"
+        android:layout_alignStart="@+id/imageView10"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的地址"
+        android:textSize="19sp"
+        android:layout_alignTop="@+id/imageView11"
+        android:layout_toRightOf="@+id/imageView10"
+        android:layout_toEndOf="@+id/imageView10"
+        android:id="@+id/textView10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除历史记录..."
+        android:layout_below="@+id/list"
+        android:textSize="19sp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

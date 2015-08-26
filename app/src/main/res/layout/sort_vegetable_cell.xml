@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/sort_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/tomato_2" />
+
+        <TextView
+            android:id="@+id/good_vegetable_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/sort_pic"
+            android:layout_toRightOf="@+id/sort_pic"
+            android:text="紫甘蓝"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sort_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/good_vegetable_name"
+            android:layout_below="@+id/good_vegetable_name"
+            android:layout_marginTop="10dp"
+            android:text="蔬菜简介"
+            android:textColor="#32d2e6"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/productplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/good_vegetable_name"
+            android:layout_below="@+id/sort_pic"
+            android:text="产地 : " />
+
+        <TextView
+            android:id="@+id/product_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/productplace"
+            android:layout_toRightOf="@id/productplace"
+            android:text="西安" />
+
+        <TextView
+            android:id="@+id/goodprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/productplace"
+            android:layout_below="@+id/productplace"
+            android:layout_marginTop="5dp"
+            android:text="价格 : " />
+
+        <TextView
+            android:id="@+id/good_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/goodprice"
+            android:layout_toRightOf="@id/goodprice"
+            android:text="2.5"
+            android:textColor="#ff00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/yuan_jin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/good_price"
+            android:layout_toRightOf="@id/good_price"
+            android:text="元/斤" />
+
+        <TextView
+            android:id="@+id/productsave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/goodprice"
+            android:layout_below="@+id/goodprice"
+            android:layout_marginTop="5dp"
+            android:text="库存 : " />
+
+        <TextView
+            android:id="@+id/product_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/productsave"
+            android:layout_toRightOf="@id/productsave"
+            android:text="999" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/jian" />
+
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:background="@drawable/zhong"
+                android:gravity="center"
+                android:text="20" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/jia" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="22.5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/to_car" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

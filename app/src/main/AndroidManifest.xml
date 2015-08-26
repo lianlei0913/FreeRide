@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myzyd.freeride">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".logActivity.LogInActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".logActivity.LogonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.PersonDetailsAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyLocationAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyAccountAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.SuggestAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.UpdateAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.AboutUsAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyOrderAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyOrderAct1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyOrderAct2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyOrderAct3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.MyOrderAct4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forthActivity.ShareAct"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".forthActivity.MyAccountAddAct"/>
+        <activity android:name=".forthActivity.MyAccountChangeAct"/>
+        <activity android:name=".thirdActivity.Pay"/>
+        <activity android:name=".thirdActivity.PayConfirm"/>
+        <activity android:name=".forthActivity.SaleSupportAct"/>
+    </application>
+
+</manifest>

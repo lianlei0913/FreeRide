@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_layout02"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/butt"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    /**
+    *此底栏布局初始不可见，须点击@sou 按键方可显示
+    *然后点击@fanhui 按钮切换bottom_layout
+    */
+
+    <ImageButton
+        android:id="@+id/fanhui_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/fanhui" />
+
+    <EditText
+        android:id="@+id/sou_et"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_toLeftOf="@+id/sou_yuan_btn"
+        android:layout_toRightOf="@+id/fanhui_btn"
+        android:layout_toStartOf="@+id/sou_yuan_btn"
+        android:background="@drawable/bg_edittext"
+        android:hint="搜一搜喜欢的~"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/sou_yuan_btn"
+        android:layout_alignBottom="@+id/sou_yuan_btn" />
+
+    <ImageButton
+        android:id="@+id/sou_yuan_btn"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/sou_yuan" />
+
+
+</RelativeLayout>

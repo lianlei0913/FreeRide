@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="49dp"
+    android:background="@drawable/butt"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/sou"
+        android:layout_width="51dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/sou" />
+
+    <FrameLayout
+        android:id="@+id/shou_img"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="3dp"
+            android:text="首页"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+
+        <ImageButton
+            android:id="@+id/shouye"
+            android:layout_width="31dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/shou"
+            android:clickable="false" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/guoshu_img"
+        android:background="#00FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+
+        <ImageButton
+            android:id="@+id/guoshu"
+            android:layout_width="23dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/chan"
+            android:clickable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="3dp"
+            android:text="果蔬"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/lanzi_img"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="3dp"
+            android:text="菜篮子"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+
+        <ImageButton
+            android:id="@+id/lanzi"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/lan"
+            android:clickable="false" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/wode_img"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#00FFFFFF"
+        android:layout_weight="1">
+
+
+        <ImageButton
+            android:id="@+id/wode"
+            android:layout_width="28dp"
+            android:layout_height="30.5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/me"
+            android:clickable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="3dp"
+            android:text="我的"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+    </FrameLayout>
+
+</LinearLayout>
