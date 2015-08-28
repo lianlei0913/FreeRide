@@ -63,12 +63,12 @@
         android:clickable="false"
         android:focusable="false"
         android:layout_below="@+id/frameLayout"
-        android:layout_toLeftOf="@+id/textView9"
-        android:layout_toStartOf="@+id/textView9"
+        android:layout_toLeftOf="@+id/locationBtn"
+        android:layout_toStartOf="@+id/locationBtn"
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/locationBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -88,18 +88,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp">
-
-    </ListView>
 
     <ImageView
         android:id="@+id/imageView11"
@@ -121,11 +109,41 @@
         android:layout_toEndOf="@+id/imageView10"
         android:id="@+id/textView10" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/location_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/imageView11"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/location1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="默认地址1"
+            android:layout_marginTop="18dp"/>
+        <TextView
+            android:id="@+id/location2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="默认地址2"
+            android:layout_marginTop="18dp"/>
+        <TextView
+            android:id="@+id/location3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="默认地址3"
+            android:layout_marginTop="18dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/clear_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="清除历史记录..."
-        android:layout_below="@+id/list"
+        android:layout_below="@+id/location_layout"
         android:textSize="19sp"
         android:layout_centerHorizontal="true" />
 
