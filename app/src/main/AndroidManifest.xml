@@ -29,8 +29,9 @@
             android:value="59426176b4c98cd1b201fd0c7005fd21" />
 
         <activity
-            android:name=".logActivity.LogInActivity"
+            android:name=".Welcome"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -38,6 +39,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".logActivity.LogInActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
