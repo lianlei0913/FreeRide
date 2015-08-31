@@ -47,7 +47,7 @@ public class FirstAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
 
-            convertView = inflater.inflate(R.layout.pagerp_first_girdview, null);
+            convertView = inflater.inflate(R.layout.page_first_girdview, null);
             holder = new ViewHolder();
             holder.layout = (LinearLayout) convertView
                     .findViewById(R.id.fast_buy);

@@ -50,7 +50,6 @@ public class ForthPageActivity extends Fragment {
         orderLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了我的订单");
                 intent = new Intent(getActivity(), MyOrderAct.class);
                 startActivity(intent);
             }
@@ -94,7 +93,6 @@ public class ForthPageActivity extends Fragment {
         locationLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了我的位置");
                 intent = new Intent(getActivity(), MyLocationAct.class);
                 startActivity(intent);
             }
@@ -106,7 +104,6 @@ public class ForthPageActivity extends Fragment {
         informationLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("点击了个人信息");
                 intent = new Intent(getActivity(), PersonDetailsAct.class);
                 startActivity(intent);
             }
@@ -117,7 +114,6 @@ public class ForthPageActivity extends Fragment {
         accountLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了个人账户");
                 intent = new Intent(getActivity(), MyAccountAct.class);
                 startActivity(intent);
             }
@@ -128,7 +124,6 @@ public class ForthPageActivity extends Fragment {
         suggestionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了意见反馈");
                 intent = new Intent(getActivity(), SuggestAct.class);
                 startActivity(intent);
             }
@@ -140,7 +135,6 @@ public class ForthPageActivity extends Fragment {
         updateLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了版本更新");
                 intent = new Intent(getActivity(), UpdateAct.class);
                 startActivity(intent);
             }
@@ -151,7 +145,6 @@ public class ForthPageActivity extends Fragment {
         aboutLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了关于我们");
                 intent = new Intent(getActivity(), AboutUsAct.class);
                 startActivity(intent);
             }
@@ -162,7 +155,6 @@ public class ForthPageActivity extends Fragment {
         shareLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了分享好友");
                 intent = new Intent(getActivity(), ShareAct.class);
                 startActivity(intent);
             }
@@ -173,7 +165,6 @@ public class ForthPageActivity extends Fragment {
         exitLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("退出登录");
                 intent = new Intent(getActivity(), LogInActivity.class);
                 startActivity(intent);
             }

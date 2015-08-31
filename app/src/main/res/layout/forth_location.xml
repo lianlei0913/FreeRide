@@ -121,19 +121,16 @@
             android:id="@+id/location1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="默认地址1"
             android:layout_marginTop="18dp"/>
         <TextView
             android:id="@+id/location2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="默认地址2"
             android:layout_marginTop="18dp"/>
         <TextView
             android:id="@+id/location3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="默认地址3"
             android:layout_marginTop="18dp"/>
     </LinearLayout>
 
@@ -146,5 +143,7 @@
         android:layout_below="@+id/location_layout"
         android:textSize="19sp"
         android:layout_centerHorizontal="true" />
+
+
 
 </RelativeLayout>

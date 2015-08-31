@@ -78,6 +78,12 @@ public class SortAct1 extends Fragment implements View.OnClickListener, SwipeRef
         return v;
     }
 
+
+    /*
+    *
+    * 各个item的适配器都需重写，以响应内部按钮点击事件
+    *
+     */
     ///适配器
     public void sortAdapter() {
         initList();

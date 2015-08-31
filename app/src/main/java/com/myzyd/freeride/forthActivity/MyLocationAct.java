@@ -14,6 +14,7 @@ import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
 import com.myzyd.freeride.MainActivity;
 import com.myzyd.freeride.R;
+import com.myzyd.freeride.Utils.LogUtil;
 
 import java.util.Date;
 
@@ -56,7 +57,7 @@ public class MyLocationAct extends MainActivity {
         locationBack.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("返回个人中心");
+                LogUtil.d("MyLocationAct", "返回个人中心");
                 finish();
             }
         });
@@ -64,6 +65,12 @@ public class MyLocationAct extends MainActivity {
             @Override
             public void onClick(View v) {
                 startAmap();
+            }
+        });
+        clearLocation.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                location_tv2.setText(null);
             }
         });
     }
@@ -74,9 +81,9 @@ public class MyLocationAct extends MainActivity {
 		 * mAMapLocManager.setGpsEnable(false);
 		 * 1.0.2版本新增方法，设置true表示混合定位中包含gps定位，false表示纯网络定位，默认是true Location
 		 * API定位采用GPS和网络混合定位方式
-		 * ，第一个参数是定位provider，第二个参数时间最短是2000毫秒，第三个参数距离间隔单位是米，第四个参数是定位监听者
+		 * 第一个参数是定位provider。第二个参数时间最短是2000毫秒，为0则关闭自动更新？第三个参数距离间隔单位是米，第四个参数是定位监听者
 		 */
-        aMapManager.requestLocationUpdates(LocationProviderProxy.AMapNetwork, 2000, 10, mAMapLocationListener);
+        aMapManager.requestLocationUpdates(LocationProviderProxy.AMapNetwork, 2000, 1, mAMapLocationListener);
     }
 
     private void stopAmap() {
@@ -128,7 +135,9 @@ public class MyLocationAct extends MainActivity {
                         + location.getProvince() + "\n市:" + location.getCity()
                         + "\n区(县):" + location.getDistrict() + "\n区域编码:" + location
                         .getAdCode());
-                location_tv1.setText("高德定位\n" + str);
+
+                    location_tv1.setText("高德定位\n" + desc+ "\n定位时间:"
+                            + new Date(location.getTime()).toLocaleString());
             }
         }
     };

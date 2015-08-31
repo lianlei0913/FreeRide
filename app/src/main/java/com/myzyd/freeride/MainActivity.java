@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.myzyd.freeride.Adapter.FragmentAdapter;
+import com.myzyd.freeride.Utils.LogUtil;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
     public static final int TAB_HOME = 0;
@@ -92,7 +93,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         sou_yuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("你点击了搜索按钮");
+                LogUtil.d("MainActivity", "返回个人中心");
             }
         });
 

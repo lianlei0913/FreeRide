@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.myzyd.freeride.R;
+import com.myzyd.freeride.Utils.LogUtil;
 
 /**
  * Created by xiehehe on 15/7/31.
@@ -26,7 +27,7 @@ public class ShareAct extends Activity {
         shareBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("返回个人中心");
+                LogUtil.d("ShareAct", "返回个人中心");
                 finish();
             }
         });

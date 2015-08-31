@@ -32,6 +32,7 @@ public class LogInActivity extends Activity implements View.OnClickListener {
     private UserService userService = new UserServiceImpl();
     private ProgressDialog dialog;
 
+
     private static final int Flag_login_success = 1;
     private static final String Flag_login_error = "登录失败";
     private static final String MSG_LOGIN_SUCCESS = "登录成功";
@@ -163,6 +164,7 @@ public class LogInActivity extends Activity implements View.OnClickListener {
     private IHandler handler = new IHandler(this) {
 
     };
+
 
 
 }

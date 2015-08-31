@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.myzyd.freeride.MainActivity;
 import com.myzyd.freeride.R;
+import com.myzyd.freeride.Utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -188,7 +189,7 @@ public class MyOrderAct extends MainActivity {
         orderBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("返回个人中心");
+                LogUtil.d("MyOrderAct", "返回个人中心");
                 finish();
             }
         });

@@ -86,14 +86,14 @@
                     android:layout_marginLeft="20dp"
                     android:layout_toEndOf="@+id/weo_btn"
                     android:layout_toRightOf="@+id/weo_btn"
-                    android:text="收 货 人："
+                    android:text="收 货 人 ："
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/receiver_name"
                     android:layout_width="147.5dp"
-                    android:layout_height="24dp"
+                    android:layout_height="20dp"
                     android:layout_alignBottom="@id/textView13"
                     android:layout_toRightOf="@id/textView13"
                     android:background="@null"
@@ -109,7 +109,7 @@
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/textView13"
+                    android:layout_alignRight="@id/textView13"
                     android:layout_below="@id/textView13"
                     android:layout_marginTop="12dp"
                     android:text="联系电话："
@@ -118,7 +118,7 @@
                 <EditText
                     android:id="@+id/receiver_phone"
                     android:layout_width="147.5dp"
-                    android:layout_height="24dp"
+                    android:layout_height="20dp"
                     android:layout_alignBottom="@id/textView14"
                     android:layout_toRightOf="@id/textView14"
                     android:background="@null"
@@ -144,7 +144,7 @@
                 <EditText
                     android:id="@+id/receiver_address"
                     android:layout_width="147.5dp"
-                    android:layout_height="24dp"
+                    android:layout_height="20dp"
                     android:layout_alignBottom="@id/textView15"
                     android:layout_toRightOf="@id/textView15"
                     android:background="@null"
@@ -197,17 +197,17 @@
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/textView16"
+                    android:layout_alignRight="@id/textView13"
                     android:layout_below="@id/textView16"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="12dp"
-                    android:text="备        注："
+                    android:text="备      注："
                     android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/receicer_note"
                     android:layout_width="147.5dp"
-                    android:layout_height="24dp"
+                    android:layout_height="20dp"
                     android:layout_alignBottom="@id/textView17"
                     android:layout_toRightOf="@id/textView17"
                     android:background="@null"
@@ -215,6 +215,7 @@
                     android:gravity="bottom"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+
                     android:text="请于早上10点前送达"
                     android:singleLine="true"
                     android:textSize="15sp" />
