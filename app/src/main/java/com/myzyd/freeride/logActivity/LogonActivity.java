@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
@@ -44,11 +45,12 @@ public class LogonActivity extends Activity implements View.OnClickListener {
     protected EditText phone_et, code_et, setPwd_et, confirmPwd_et;
     protected ImageButton logonBackBtn;
     protected CheckBox checkBox;
-
+    private CountTimer countTimer;
     private BroadcastReceiver smsReceiver;
     private IntentFilter filter2;
     private Handler handler;
     private String strContent;
+    //六位数字匹配
     private String patternCoder = "(?<!\\d)\\d{6}(?!\\d)";
 
 
@@ -60,6 +62,8 @@ public class LogonActivity extends Activity implements View.OnClickListener {
         hideView();
         logOn_layout.setVisibility(View.VISIBLE);
 
+
+        //自动填充验证码
         handler = new Handler() {
             public void handleMessage(android.os.Message msg) {
                 code_et.setText(strContent);
@@ -106,9 +110,13 @@ public class LogonActivity extends Activity implements View.OnClickListener {
         logOn2_layout = (LinearLayout) findViewById(R.id.logon2_layout);
         logOn3_layout = (LinearLayout) findViewById(R.id.logon3_layout);
 
+        //一分钟
+        countTimer = new CountTimer(60000, 1000);
+
         getCode_btn = (Button) findViewById(R.id.getCode_btn);
         getCode_btn.setOnClickListener(this);
         reSend_btn = (Button) findViewById(R.id.reSend_btn);
+        reSend_btn.setOnClickListener(this);
         sure_btn = (Button) findViewById(R.id.sure_btn);
         sure_btn.setOnClickListener(this);
         sure2_btn = (Button) findViewById(R.id.sure2_btn);
@@ -133,19 +141,23 @@ public class LogonActivity extends Activity implements View.OnClickListener {
         logOn3_layout.setVisibility(View.GONE);
     }
 
-
     //点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.getCode_btn:
 
-                if (!(checkBox.isChecked())) {
+                if(phone_et.getText().length() <= 10){
+                    Toast.makeText(MyApplication.getContext(), "请正确输入电话号码", Toast.LENGTH_SHORT).show();
+                }
+                else if (!(checkBox.isChecked())) {
                     Toast.makeText(MyApplication.getContext(), "请阅读并同意自由搭用户协议", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else {
                     LogUtil.d("LogonActivity", "点击获取验证码");
                     hideView();
-
+                    // 开启倒计时
+                    countTimer.start();
                     //请求验证码并跳转到输入验证码页面
                     new AT().execute(phone_et.getText().toString());
                     logOn_layout.setVisibility(View.GONE);
@@ -154,10 +166,12 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.reSend_btn:
+                logOn_layout.setVisibility(View.VISIBLE);
+                logOn2_layout.setVisibility(View.GONE);
                 break;
 
             case R.id.sure_btn:
-                if (code_et.getText().toString() == null) {
+                if (code_et.getText().length() <=5) {
                     Toast.makeText(MyApplication.getContext(), "请正确填写验证码", Toast.LENGTH_SHORT).show();
                 } else {
                     hideView();
@@ -169,15 +183,14 @@ public class LogonActivity extends Activity implements View.OnClickListener {
             case R.id.sure2_btn:
                 new AT().execute(phone_et.getText().toString(), setPwd_et.getText().toString(), "flag");
                 startActivity(new Intent(MyApplication.getContext(), LogInActivity.class));
+                Toast.makeText(MyApplication.getContext(), "注册成功", Toast.LENGTH_SHORT).show();
                 break;
-
             case R.id.logon_back_btn:
                 finish();
             default:
                 break;
         }
     }
-
 
     //网络请求
     class AT extends AsyncTask {
@@ -230,7 +243,6 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                     }
                     return result;
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -245,8 +257,7 @@ public class LogonActivity extends Activity implements View.OnClickListener {
     }
 
     /**
-     * 匹配短信中间的6个数字（验证码等）
-     *
+     * 匹配短信中间的6个数字（验证码）
      * @param patternContent
      * @return
      */
@@ -260,6 +271,37 @@ public class LogonActivity extends Activity implements View.OnClickListener {
             return matcher.group();
         }
         return null;
+    }
+
+    // 每隔一分钟可点击一次验证码
+    public class CountTimer extends CountDownTimer {
+        /**
+         * @param millisInFuture
+         *            时间间隔是多长的时间
+         * @param countDownInterval
+         *            回调onTick方法，没隔多久执行一次
+         */
+        public CountTimer(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        // 间隔时间结束的时候调用的方法
+        @Override
+        public void onFinish() {
+            // 更新页面的组件
+            reSend_btn.setText("重新验证");
+
+            reSend_btn.setClickable(true);
+        }
+
+        // 间隔时间内执行的操作
+        @Override
+        public void onTick(long millisUntilFinished) {
+            // 更新页面的组件
+            reSend_btn.setText(millisUntilFinished / 1000 + "秒后重新发送");
+            reSend_btn.setClickable(false);
+        }
+
     }
 
 }
