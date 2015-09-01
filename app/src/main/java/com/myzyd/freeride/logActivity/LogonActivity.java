@@ -1,10 +1,16 @@
 package com.myzyd.freeride.logActivity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.telephony.SmsMessage;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,7 +21,6 @@ import android.widget.Toast;
 
 import com.myzyd.freeride.MyApplication;
 import com.myzyd.freeride.R;
-import com.myzyd.freeride.Receiver.SMSBroadcastReceiver;
 import com.myzyd.freeride.Utils.LogUtil;
 
 import org.apache.http.HttpResponse;
@@ -25,6 +30,9 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by xiehehe on 15/7/23.
@@ -37,8 +45,12 @@ public class LogonActivity extends Activity implements View.OnClickListener {
     protected ImageButton logonBackBtn;
     protected CheckBox checkBox;
 
-    private SMSBroadcastReceiver mSMSBroadcastReceiver;
-    private static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
+    private BroadcastReceiver smsReceiver;
+    private IntentFilter filter2;
+    private Handler handler;
+    private String strContent;
+    private String patternCoder = "(?<!\\d)\\d{6}(?!\\d)";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +59,45 @@ public class LogonActivity extends Activity implements View.OnClickListener {
         initView();
         hideView();
         logOn_layout.setVisibility(View.VISIBLE);
+
+        handler = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                code_et.setText(strContent);
+            }
+        };
+        filter2 = new IntentFilter();
+        filter2.addAction("android.provider.Telephony.SMS_RECEIVED");
+        filter2.setPriority(Integer.MAX_VALUE);
+        smsReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Object[] objs = (Object[]) intent.getExtras().get("pdus");
+                for (Object obj : objs) {
+                    byte[] pdu = (byte[]) obj;
+                    SmsMessage sms = SmsMessage.createFromPdu(pdu);
+                    // 短信的内容
+                    String message = sms.getMessageBody();
+                    Log.d("logo", "message     " + message);
+                    // 短息的手机号。。+86开头？
+                    String from = sms.getOriginatingAddress();
+                    Log.d("logo", "from     " + from);
+                    // Time time = new Time();
+                    // time.set(sms.getTimestampMillis());
+                    // String time2 = time.format3339(true);
+                    // Log.d("logo", from + "   " + message + "  " + time2);
+                    // strContent = from + "   " + message;
+                    // handler.sendEmptyMessage(1);
+                    if (!TextUtils.isEmpty(from)) {
+                        String code = patternCode(message);
+                        if (!TextUtils.isEmpty(code)) {
+                            strContent = code;
+                            handler.sendEmptyMessage(1);
+                        }
+                    }
+                }
+            }
+        };
+        registerReceiver(smsReceiver, filter2);
     }
 
     //初始化页面及其点击按钮
@@ -103,14 +154,12 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.reSend_btn:
-
                 break;
 
             case R.id.sure_btn:
-                if (code_et.getText().toString() ==null){
+                if (code_et.getText().toString() == null) {
                     Toast.makeText(MyApplication.getContext(), "请正确填写验证码", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     hideView();
                     logOn2_layout.setVisibility(View.GONE);
                     logOn3_layout.setVisibility(View.VISIBLE);
@@ -118,7 +167,7 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.sure2_btn:
-                new AT().execute(phone_et.getText().toString(), setPwd_et.getText().toString());
+                new AT().execute(phone_et.getText().toString(), setPwd_et.getText().toString(), "flag");
                 startActivity(new Intent(MyApplication.getContext(), LogInActivity.class));
                 break;
 
@@ -129,35 +178,58 @@ public class LogonActivity extends Activity implements View.OnClickListener {
         }
     }
 
+
+    //网络请求
     class AT extends AsyncTask {
         @Override
         public String doInBackground(Object[] params) {
             try {
                 //请求数据
                 HttpClient hc = new DefaultHttpClient();
-                HttpPost hp = new HttpPost("http://192.168.1.104:8080/Ziyoudaprj/duanxinservlet");
-                //请求json
+
+                //注册请求
                 JSONObject jo = new JSONObject();
                 if (params.length > 1) {
+                    HttpPost hp = new HttpPost("http://192.168.1.104:8080/Ziyoudaprj/Userservlet");
                     jo.put("iphone", params[0]);
                     jo.put("userPwd", params[1]);
-                } else {
-                    jo.put("iphone", params[0]);
-                }
-                hp.setEntity(new StringEntity(jo.toString()));
-                HttpResponse hr = hc.execute(hp);
-                String result = null;
-                if (hr.getStatusLine().getStatusCode() == 200) {
-                    result = EntityUtils.toString(hr.getEntity());
-                    //判断返回结果接收
-                    if (result != null) {
-                    } else {
+                    jo.put("flag", params[2]);
+                    hp.setEntity(new StringEntity(jo.toString()));
+                    HttpResponse hr = hc.execute(hp);
+                    LogUtil.d("LogonActivity", "注册完成");
+                    String result = null;
+                    if (hr.getStatusLine().getStatusCode() == 200) {
+                        result = EntityUtils.toString(hr.getEntity());
+                        //判断返回结果接收
+                        if (result != null) {
+                        } else {
+                        }
                     }
+                    if (hc != null) {
+                        hc.getConnectionManager().shutdown();
+                    }
+                    return result;
+                } else {
+                    //验证码请求
+                    HttpPost hp = new HttpPost("http://192.168.1.104:8080/Ziyoudaprj/duanxinservlet");
+                    jo.put("iphone", params[0]);
+                    hp.setEntity(new StringEntity(jo.toString()));
+                    HttpResponse hr = hc.execute(hp);
+                    LogUtil.d("LogonActivity", "发送完成");
+
+                    String result = null;
+                    if (hr.getStatusLine().getStatusCode() == 200) {
+                        result = EntityUtils.toString(hr.getEntity());
+                        //判断返回结果接收
+                        if (result != null) {
+                        } else {
+                        }
+                    }
+                    if (hc != null) {
+                        hc.getConnectionManager().shutdown();
+                    }
+                    return result;
                 }
-                if (hc != null) {
-                    hc.getConnectionManager().shutdown();
-                }
-                return result;
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -167,31 +239,27 @@ public class LogonActivity extends Activity implements View.OnClickListener {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        //生成广播处理
-        mSMSBroadcastReceiver = new SMSBroadcastReceiver();
-
-        //实例化过滤器并设置要过滤的广播
-        IntentFilter intentFilter = new IntentFilter(ACTION);
-        intentFilter.setPriority(Integer.MAX_VALUE);
-        //注册广播
-        this.registerReceiver(mSMSBroadcastReceiver, intentFilter);
-
-        mSMSBroadcastReceiver.setOnReceivedMessageListener(new SMSBroadcastReceiver.MessageListener() {
-            @Override
-            public void onReceived(String message) {
-
-                code_et.setText(message);
-
-            }
-        });
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
-        //注销短信监听广播
-        this.unregisterReceiver(mSMSBroadcastReceiver);
+        unregisterReceiver(smsReceiver);
     }
+
+    /**
+     * 匹配短信中间的6个数字（验证码等）
+     *
+     * @param patternContent
+     * @return
+     */
+    private String patternCode(String patternContent) {
+        if (TextUtils.isEmpty(patternContent)) {
+            return null;
+        }
+        Pattern p = Pattern.compile(patternCoder);
+        Matcher matcher = p.matcher(patternContent);
+        if (matcher.find()) {
+            return matcher.group();
+        }
+        return null;
+    }
+
 }
