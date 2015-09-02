@@ -24,8 +24,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile files('libs/Volley.jar')
     compile files('libs/Android_Location_V1.1.2.jar')
-    compile 'com.marshalchen.ultimateandroid:ultimateandroid:0.7.1'
-//    compile 'com.marshalchen.ultimateandroid:ultimateandroiduiwidget:0.7.0'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.squareup.okio:okio:1.5.0'
+
 }
