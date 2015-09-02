@@ -99,7 +99,6 @@ public class LogInActivity extends Activity implements View.OnClickListener {
                             msg.setData(data);
                             handler.sendMessage(msg);
                         }
-
                     }
                 });
                 thread.start();

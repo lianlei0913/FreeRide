@@ -2,6 +2,7 @@ package com.myzyd.freeride.service;
 
 import android.util.Log;
 
+import com.myzyd.freeride.Utils.HttpUtils;
 import com.myzyd.freeride.logActivity.LogInActivity;
 
 import org.apache.http.HttpResponse;
@@ -36,9 +37,8 @@ public class UserServiceImpl implements UserService {
 
         HttpClient client = new DefaultHttpClient();
 
-        String uri = "http://192.168.1.108:8080/MessRoomService/isLogin";
-
-        HttpPost post = new HttpPost(uri);
+        //请求登录
+        HttpPost post = new HttpPost(HttpUtils.LogIn);
 
         JSONObject object = new JSONObject();
         object.put("userName", userName);

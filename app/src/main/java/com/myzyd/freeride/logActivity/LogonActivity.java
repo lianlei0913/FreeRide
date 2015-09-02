@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.myzyd.freeride.MyApplication;
 import com.myzyd.freeride.R;
+import com.myzyd.freeride.Utils.HttpUtils;
 import com.myzyd.freeride.Utils.LogUtil;
 
 import org.apache.http.HttpResponse;
@@ -203,7 +204,7 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                 //注册请求
                 JSONObject jo = new JSONObject();
                 if (params.length > 1) {
-                    HttpPost hp = new HttpPost("http://192.168.1.104:8080/Ziyoudaprj/Userservlet");
+                    HttpPost hp = new HttpPost(HttpUtils.LogOn);
                     jo.put("iphone", params[0]);
                     jo.put("userPwd", params[1]);
                     jo.put("flag", params[2]);
@@ -224,7 +225,7 @@ public class LogonActivity extends Activity implements View.OnClickListener {
                     return result;
                 } else {
                     //验证码请求
-                    HttpPost hp = new HttpPost("http://192.168.1.104:8080/Ziyoudaprj/duanxinservlet");
+                    HttpPost hp = new HttpPost(HttpUtils.LogCode);
                     jo.put("iphone", params[0]);
                     hp.setEntity(new StringEntity(jo.toString()));
                     HttpResponse hr = hc.execute(hp);
