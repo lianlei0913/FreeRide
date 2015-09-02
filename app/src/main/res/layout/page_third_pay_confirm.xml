@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <!-- 此页面的兼容性有待完善，底部三种支付方式在4.0屏幕以下显示不全-->
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -148,8 +151,8 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="23dp"
             android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/radioButton"
-            android:layout_toStartOf="@+id/radioButton"
+            android:layout_toLeftOf="@+id/radioButton1"
+            android:layout_toStartOf="@+id/radioButton1"
             android:text=" 元" />
 
         <TextView
@@ -170,21 +173,15 @@
             android:layout_toStartOf="@+id/account_money"
             android:text="实付款: " />
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </RadioGroup>
-
         <RadioButton
-            android:id="@+id/radioButton"
-            style="@style/CustomTheme"
+            android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="24dp"
+            android:checked="true"
             android:layout_marginRight="10dp" />
 
     </RelativeLayout>
@@ -248,15 +245,8 @@
             android:layout_toStartOf="@+id/arrival_money"
             android:text="实付款: " />
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </RadioGroup>
-
         <RadioButton
             android:id="@+id/radioButton2"
-            style="@style/CustomTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -275,45 +265,46 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/kuang_03">
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="其他支付方式"
-            android:textColor="#000000"
-            android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView24"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text=" 元"
-            android:textColor="#000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/other_money"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView25"
-            android:layout_toLeftOf="@+id/textView25"
-            android:layout_toStartOf="@+id/textView25"
-            android:text="98"
-            android:textColor="#ff00" />
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="其他支付方式"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_weight="1"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/other_money"
-            android:layout_toLeftOf="@+id/other_money"
-            android:layout_toStartOf="@+id/other_money"
-            android:text="实付款: " />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="实付款：" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="98"
+                android:textColor="#ff00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text=" 元"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
 
 
         <ImageView
@@ -324,38 +315,40 @@
             android:background="@drawable/xian_04" />
 
 
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/imageView12"
-            android:orientation="horizontal"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView12"
+            android:orientation="horizontal">
 
             <RadioButton
-                android:drawableLeft="@drawable/zhufubao"
+                android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/zhufubao" />
 
             <RadioButton
-                android:drawableLeft="@drawable/weixin2"
+                android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/weixin2" />
 
             <RadioButton
-                android:drawableLeft="@drawable/pay_yinlian"
+                android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                 />
+                android:drawableLeft="@drawable/pay_yinlian" />
 
-        </RadioGroup>
-
+        </LinearLayout>
 
     </RelativeLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -366,10 +359,11 @@
         android:textColor="#fffdb136" />
 
     <ImageButton
+        android:id="@+id/PayAll"
         android:layout_width="300dp"
         android:layout_height="32dp"
-        android:background="@drawable/qrzf"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/qrzf" />
 
 </LinearLayout>

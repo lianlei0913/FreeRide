@@ -127,6 +127,8 @@ public class MyLocationAct extends MainActivity {
                     cityCode = locBundle.getString("citycode");
                     desc = locBundle.getString("desc");
                 }
+
+                //获取到的详细地图信息展示
                 String str = ("定位成功:(" + geoLng + "," + geoLat + ")"
                         + "\n精    度    :" + location.getAccuracy() + "米"
                         + "\n定位方式:" + location.getProvider() + "\n定位时间:"
